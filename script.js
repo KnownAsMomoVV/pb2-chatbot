@@ -56,19 +56,142 @@ function generateChatbotResponse(message) {
     let response = '';
 
     if (message.includes('hello') || message.includes('hi')) {
-        response = 'Hello! How can I help you today?';
+        response = 'Hello! How can I help you today? If you want information about topics I can help you with, write "topics".';
+    } else if (message.includes('cleanbug')) {
+        let messages = document.getElementsByClassName('chatbot-message')
+        for (let i = 0; i<messages.length;i++) {
+            if (messages[messages.length-i]) {
+                if (messages[messages.length-i].innerText.includes("configuration")){
+                    return `You can contact the team responsible for the configuration of the CleanBug via mail to 
+                        customers-cleanbug@bugland.com, or during our office hours at +49401234567-11. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+                }else if (messages[messages.length-i].innerText.includes('functionality')) {
+                    return `You can contact the team responsible for the functionality of the CleanBug via mail to 
+                        customers-cleanbug@bugland.com, or during our office hours at +49401234567-12. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+                } else if (messages[messages.length-i].innerText.includes('questions')) {
+                    return `You can contact the team responsible for the questions regarding the CleanBug via mail to 
+                        customers-cleanbug@bugland.com, or during our office hours at +49401234567-13. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+                } else if (messages[messages.length-i].innerText.includes('features')) {
+                    return `You can contact the team responsible for the features of the CleanBug via mail to 
+                        customers-cleanbug@bugland.com, or during our office hours at +49401234567-14. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+                } else {
+                    return `You can contact us via mail to customers-cleanbug@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+                }
+            }
+        }
+        return `You can contact us via mail to customers-cleanbug@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
+    } else if (message.includes('windowfly')) {
+        let messages = document.getElementsByClassName('chatbot-message')
+        for (let i = 0; i<messages.length;i++) {
+            if (messages[messages.length-i]) {
+                if (messages[messages.length-i].innerText.includes("configuration")){
+                    return `You can contact the team responsible for the configuration of the WindowFly via mail to 
+                        customers-windowfly@bugland.com, or during our office hours at +49401234567-21. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+                }else if (messages[messages.length-i].innerText.includes('functionality')) {
+                    return `You can contact the team responsible for the functionality of the WindowFly via mail to 
+                        customers-windowfly@bugland.com, or during our office hours at +49401234567-22. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+                } else if (messages[messages.length-i].innerText.includes('questions')) {
+                    return `You can contact the team responsible for the questions regarding the WindowFly via mail to 
+                        customers-windowfly@bugland.com, or during our office hours at +49401234567-23. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+                } else if (messages[messages.length-i].innerText.includes('features')) {
+                    return `You can contact the team responsible for the features of the WindowFly via mail to 
+                        customers-windowfly@bugland.com, or during our office hours at +49401234567-24. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+                } else {
+                    return `You can contact us via mail to customers-windowfly@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+                }
+            }
+        }
+        return `You can contact us via mail to customers-windowfly@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
+    } else if (message.includes('gardenbeetle')) {
+        let messages = document.getElementsByClassName('chatbot-message')
+        for (let i = 0; i<messages.length;i++) {
+            if (messages[messages.length-i]) {
+                if (messages[messages.length-i].innerText.includes("configuration")){
+                    return `You can contact the team responsible for the configuration of the GardenBeetle via mail to 
+                        customers-gardenbeetle@bugland.com, or during our office hours at +49401234567-31. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
+                }else if (messages[messages.length-i].innerText.includes('functionality')) {
+                    return `You can contact the team responsible for the functionality of the GardenBeetle via mail to 
+                        customers-gardenbeetle@bugland.com, or during our office hours at +49401234567-32. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
+                } else if (messages[messages.length-i].innerText.includes('questions')) {
+                    return `You can contact the team responsible for the questions regarding the GardenBeetle via mail to 
+                        customers-gardenbeetle@bugland.com, or during our office hours at +49401234567-33. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
+                } else if (messages[messages.length-i].innerText.includes('features')) {
+                    return `You can contact the team responsible for the features of the GardenBeetle via mail to 
+                        customers-gardenbeetle@bugland.com, or during our office hours at +49401234567-34. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
+                } else {
+                    return `You can contact us via mail to customers-gardenbeetle@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
+                }
+            }
+        }
+        return `You can contact us via mail to customers-gardenbeetle@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.
+                    Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
     } else if (message.includes('how are you')) {
         response = "I'm doing well, thank you! How can I help you?";
     } else if (message.includes('what is your name')) {
         response = "I'm a simple chatbot. How can I assist you?";
     } else if (message.includes('thank you')) {
         response = "You're welcome! Let me know if you have any more questions.";
+    } else if (message.includes('help') || message.includes('topics')) {
+        response = "Topics I can help you with are configuration, functionality, questions and features. Just write any of those words to get information on these topics. If you need help with something else, write \"else\"";
+    } else if (message.includes('configuration')) {
+        response = "What devices configuration do you need assistance with? For a list of our devices write \"devices\"";
+    } else if (message.includes('functionality')) {
+        response = "What devices functionality do you need assistance with? For a list of our devices write \"devices\"";
+    } else if (message.includes('questions')) {
+        response = "What device are your questions about? For a list of our devices write \"devices\"";
+    } else if (message.includes('features')) {
+        response = "What devices features do you need assistance with? For a list of our devices write \"devices\"";
+    } else if (message.includes('device')) {
+        response = "The devices we sell are CleanBug (our innovative vacuum cleaner and mop robot), WindowFly (our innovative window cleaning robot) and GardenBeetle (our innovative lawncare robot).";
+    } else if (message.includes('else')) {
+        let messages = document.getElementsByClassName('chatbot-message')
+        if (messages[messages.length-1]) {
+            if (messages[messages.length-1].innerText.includes("configuration, functionality, questions and features")){
+                return `You can contact us via mail to customers@bugland.com, or during our office hours at +49401234567. You
+                    can find our office hours and further information <a href="summary.html">here</a>.`
+            }
+        }
+        response = "I'm not sure how to respond to that. Can you please rephrase your question?";
     } else if (message.includes('yes')) {
         let messages = document.getElementsByClassName('chatbot-message')
         if (messages[messages.length-1]) {
             if (messages[messages.length-1].innerText === "It seems as though I am not able to help you. Do you want human assistance?"){
                 return `You can contact us via mail to customers@bugland.com, or during our office hours at +49401234567. You
-                    can find our office hours and further information <a href="https://bugland.com/customer-service">here</a>.`
+                    can find our office hours and further information <a href="summary.html">here</a>.`
             }
         }
         response = "I'm not sure how to respond to that. Can you please rephrase your question?";
@@ -79,7 +202,7 @@ function generateChatbotResponse(message) {
                 return "It seems as though I am not able to help you. Do you want human assistance?"
             }
         }
-        response = "I'm not sure how to respond to that. Can you please rephrase your question?";
+        response = "I'm not sure how to respond to that. Can you please rephrase your question? If you want information about topics I can help you with, write \"topics\".";
     }
 
     return response;
@@ -111,13 +234,13 @@ function getFormattedDateAndTime() {
 }
 
 async function processUserMessage(message, chatId) {
-    const messageRef = firebase.database().ref(`chats/${chatId}/messages`);
+    /*const messageRef = firebase.database().ref(`chats/${chatId}/messages`);
     const newMessageRef = messageRef.push();
     await newMessageRef.set({
         sender: "User",
         message: message,
         timestamp: getFormattedDateAndTime(),
-    });
+    });*/
 
     const response = generateChatbotResponse(message);
 
