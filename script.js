@@ -58,6 +58,13 @@ function generateChatbotResponse(message) {
     if (message.includes('hello') || message.includes('hi')) {
         response = 'Hello! How can I help you today? If you want information about topics I can help you with, write "topics".';
     } else if (message.includes('cleanbug')) {
+        if (message.includes('broken') || message.includes('malfunction') || message.includes('not working') || message.includes("doesn't work")|| message.includes('doesnt work')){
+            return `If your CleanBug doesn't work, try replacing or cleaning the filter and recharging the CleanBug. If the problem persists, try pressing the power-button for ten seconds.
+            If the device is damaged and needs repair, you can ask me for information about a replacement.`
+        } else if (message.includes('replace')){
+            return `If your device is broken and you need a replacement, send your CleanBug to 101 Bugland Bld., Sacramento, California, USA
+            and the department responsible to replacement will check your claim.`
+        }
         let messages = document.getElementsByClassName('chatbot-message')
         for (let i = 0; i<messages.length;i++) {
             if (messages[messages.length-i]) {
@@ -92,6 +99,13 @@ function generateChatbotResponse(message) {
                     can find our office hours and further information <a href="summary.html">here</a>.
                     Additionally you can have a look at the <a href="faq/cleanbug.html">FAQ about the CleanBug</a>.`
     } else if (message.includes('windowfly')) {
+        if (message.includes('broken') || message.includes('malfunction') || message.includes('not working') || message.includes("doesn't work")|| message.includes('doesnt work')){
+            return `If your WindowFly doesn't work, try refilling the glas cleaner and recharging the WindowFly. If the problem persists, try pressing the power-button for ten seconds.
+            If the device is damaged and needs repair, you can ask me for information about a replacement.`
+        } else if (message.includes('replace')){
+            return `If your device is broken and you need a replacement, send your WindowFly to 101 Bugland Bld., Sacramento, California, USA
+            and the department responsible to replacement will check your claim.`
+        }
         let messages = document.getElementsByClassName('chatbot-message')
         for (let i = 0; i<messages.length;i++) {
             if (messages[messages.length-i]) {
@@ -126,6 +140,13 @@ function generateChatbotResponse(message) {
                     can find our office hours and further information <a href="summary.html">here</a>.
                     Additionally you can have a look at the <a href="faq/windowfly.html">FAQ about the WindowFly</a>.`
     } else if (message.includes('gardenbeetle')) {
+        if (message.includes('broken') || message.includes('malfunction') || message.includes('not working') || message.includes("doesn't work")|| message.includes('doesnt work')){
+            return `If your GardenBeetle doesn't work, try replacing the blades and recharging the GardenBeetle. If the problem persists, try pressing the power-button for ten seconds.
+            If the device is damaged and needs repair, you can ask me for information about a replacement.`
+        } else if (message.includes('replace')){
+            return `If your device is broken and you need a replacement, send your GardenBeetle to 101 Bugland Bld., Sacramento, California, USA
+            and the department responsible to replacement will check your claim.`
+        }
         let messages = document.getElementsByClassName('chatbot-message')
         for (let i = 0; i<messages.length;i++) {
             if (messages[messages.length-i]) {
@@ -161,6 +182,8 @@ function generateChatbotResponse(message) {
                     Additionally you can have a look at the <a href="faq/gardenbeetle.html">FAQ about the GardenBeetle</a>.`
     } else if (message.includes('how are you')) {
         response = "I'm doing well, thank you! How can I help you?";
+    } else if (message.includes('replace')) {
+        response = "If your device is broken and you need a replacement, send it to 101 Bugland Bld., Sacramento, California, USA and the department responsible to replacement will check your claim.";
     } else if (message.includes('what is your name')) {
         response = "I'm a simple chatbot. How can I assist you?";
     } else if (message.includes('thank you')) {
