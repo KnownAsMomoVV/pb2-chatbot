@@ -22,6 +22,7 @@ darkModeToggle.addEventListener("click", () => {
 // init firebase
 const app = firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
+fetchKeywords();
 const chatOutput = document.getElementById("chat-output");
 const chatInput = document.getElementById("chat-input");
 const sendBtn = document.getElementById("send-btn");
@@ -34,6 +35,12 @@ sendBtn.addEventListener("click", () => {
         processUserMessage(message);
     }
 });
+
+async function fetchKeywords() {
+    const dbRef = firebase.database().ref("keywords");
+    const snapshot = await dbRef.once("value");
+    return snapshot.val()
+}
 
 chatInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -51,7 +58,17 @@ function addMessageToChat(sender, message) {
     chatOutput.scrollTop = chatOutput.scrollHeight;
 }
 
-function generateChatbotResponse(message) {
+async function generateChatbotResponse(message) {
+    let keywords = await fetchKeywords();
+    let keys = Object.keys(keywords)
+    for (let i = 0; i<keys.length;i++) {
+        if (message.includes(keys[i])) {
+            return keywords[keys[i]]
+        }
+    }
+}
+
+function generateChatbotResponseold(message) {
     message = message.toLowerCase();
     let response = '';
 
@@ -265,7 +282,7 @@ async function processUserMessage(message, chatId) {
         timestamp: getFormattedDateAndTime(),
     });*/
 
-    const response = generateChatbotResponse(message);
+    const response = await generateChatbotResponse(message);
 
     /*const newResponseRef = messageRef.push();
     await newResponseRef.set({
