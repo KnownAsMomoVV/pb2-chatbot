@@ -63,6 +63,15 @@ async function generateChatbotResponse(message) {
     let keys = Object.keys(keywords)
     for (let i = 0; i<keys.length;i++) {
         if (message.includes(keys[i])) {
+            if (typeof keywords[keys[i]] === 'object') {
+                let keykeys = Object.keys(keywords[keys[i]])
+                for (let k = 0; k<keykeys.length;k++) {
+                    if (message.includes(keykeys[k])) {
+                        return keywords[keys[i]][keykeys[k]]
+                    }
+                }
+                return keywords[keys[i]]["default"]
+            }
             return keywords[keys[i]]
         }
     }
