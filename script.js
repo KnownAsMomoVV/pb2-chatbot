@@ -75,6 +75,13 @@ async function generateChatbotResponse(message) {
             return keywords[keys[i]];
         }
     }
+    let messages = document.getElementsByClassName('chatbot-message')
+    if (messages[messages.length-1]) {
+        if (messages[messages.length-1].innerText === keywords["default"]){
+            return keywords["failure"]
+        }
+        return keywords["default"]
+    }
     return keywords["default"];
 }
 
