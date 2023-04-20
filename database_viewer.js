@@ -1,4 +1,4 @@
-// Your Firebase config object
+
 const firebaseConfig = {
     apiKey: "AIzaSyDvsbSgcc0GVG5qiJz_6onO3ZtKx6AT0YE",
     authDomain: "bhh-chatbot.firebaseapp.com",
@@ -27,7 +27,7 @@ function createTreeElement(data, key = "") {
     const header = document.createElement("div");
     header.classList.add("node-header");
 
-    // Check if the current node has a message, sender, and timestamp
+    // Check if the current node has a message, sender, and timestamp (correct format)
     const hasMessageData = typeof data === "object" && data !== null && data.message && data.sender && data.timestamp;
 
     if (hasMessageData) {
